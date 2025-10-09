@@ -31,9 +31,9 @@ def main():
             encoded_image = f.read()
 
         overlay, results = predict(
-            encoded_image,
-            model,
-            classes,
+            file=encoded_image,
+            model=model,
+            classes=classes,
         )
 
         out_img = out_dir / f"{Path(image_path).stem}_annotated.png"
