@@ -9,6 +9,7 @@ dependencies = [
     "joblib>=1.5.2",
     "numpy>=2.3.3",
     "opencv-python>=4.11.0.86",
+    "pyside6>=6.11.0",
     "python-multipart>=0.0.20",
     "scikit-learn>=1.7.2",
 ]
