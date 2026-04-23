@@ -50,20 +50,20 @@ class GUI(QMainWindow):
         layout0_h1.addWidget(btn_input)
         layout0.addLayout(layout0_h1)
 
-        self.output_path = QLineEdit()
-        self.output_path.setPlaceholderText("Output path")
-        btn_output = QPushButton("Select output")
-        btn_output.clicked.connect(lambda: self.open_selector_dir(self.output_path))
+        self.output_path_train = QLineEdit()
+        self.output_path_train.setPlaceholderText("Output path")
+        btn_output_train = QPushButton("Select output")
+        btn_output_train.clicked.connect(lambda: self.open_selector_dir(self.output_path_train))
 
         layout0.addWidget(QLabel("Output folder"))
         layout0_h2 = QHBoxLayout()
-        layout0_h2.addWidget(self.output_path)
-        layout0_h2.addWidget(btn_output)
+        layout0_h2.addWidget(self.output_path_train)
+        layout0_h2.addWidget(btn_output_train)
         layout0.addLayout(layout0_h2)
 
         self.btn_train = QPushButton("Train")
         layout0.addWidget(self.btn_train)
-        self.btn_train.clicked.connect(lambda: self.btn_train_clicked(self.input_path, self.output_path))
+        self.btn_train.clicked.connect(lambda: self.btn_train_clicked(self.input_path, self.output_path_train))
 
         layout0.addStretch()
 
@@ -90,20 +90,20 @@ class GUI(QMainWindow):
         layout1_h2.addWidget(btn_model)
         layout1.addLayout(layout1_h2)
 
-        self.output_path = QLineEdit()
-        self.output_path.setPlaceholderText("Output path")
-        btn_output = QPushButton("Select output")
-        btn_output.clicked.connect(lambda: self.open_selector_dir(self.output_path))
+        self.output_path_predict = QLineEdit()
+        self.output_path_predict.setPlaceholderText("Output path")
+        btn_output_predict = QPushButton("Select output")
+        btn_output_predict.clicked.connect(lambda: self.open_selector_dir(self.output_path_predict))
 
         layout1.addWidget(QLabel("Output folder"))
         layout1_h3 = QHBoxLayout()
-        layout1_h3.addWidget(self.output_path)
-        layout1_h3.addWidget(btn_output)
+        layout1_h3.addWidget(self.output_path_predict)
+        layout1_h3.addWidget(btn_output_predict)
         layout1.addLayout(layout1_h3)
 
         self.btn_predict = QPushButton("Predict")
         layout1.addWidget(self.btn_predict)
-        self.btn_predict.clicked.connect(lambda: self.btn_predict_clicked(self.image_path, self.model_path, self.output_path))
+        self.btn_predict.clicked.connect(lambda: self.btn_predict_clicked(self.image_path, self.model_path, self.output_path_predict))
 
         layout1.addStretch()
 
