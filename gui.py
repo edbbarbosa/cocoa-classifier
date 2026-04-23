@@ -12,9 +12,14 @@ from schemas.classifier_config import ClassifierConfig
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QTabWidget, QVBoxLayout, QLineEdit, QLabel, QHBoxLayout, QPushButton, QFileDialog
 
+from img import ImgWindow
+
 class GUI(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.window_history = []
+
         self.init_ui()
 
     def init_ui(self):
@@ -176,6 +181,9 @@ class GUI(QMainWindow):
 
             print(f"Wrote {out_img}")
             print(f"Wrote {out_csv}")  
+
+            img_window = ImgWindow(out_img)
+            self.window_history.append(img_window)
         except Exception as e:
             print(f"Training failure: {e}")
 
